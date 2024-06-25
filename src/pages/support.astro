@@ -1,0 +1,22 @@
+---
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Layout from '../layout/Layout.astro';
+---
+
+<Layout>
+  <section class='support'>
+    <ResponsiveImage
+      mobileImgUrl='/assets/images/mobile/image-interactive.jpg'
+      desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
+      alt='interactive image'
+    />
+    <h2>We're Here to Help</h2>
+    <p>
+      Have questions about our products or services? Our dedicated support team
+      is ready to assist you. We offer comprehensive technical support,
+      troubleshooting resources, and personalized assistance to ensure your VR
+      experience is seamless and successful.
+    </p>
+    <a href='#contact' class='btn-link'>Contact Support</a>
+  </section>
+</Layout>

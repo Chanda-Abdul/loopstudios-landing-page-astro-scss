@@ -1,0 +1,43 @@
+---
+import NavBar from './NavBar.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+---
+
+<header>
+  <div class='background'>
+    <ResponsiveImage
+      mobileImgUrl='/assets/images/mobile/image-hero.jpg'
+      desktopImgUrl='/assets/images/desktop/image-hero.jpg'
+      alt='background image hero'
+    />
+  </div>
+  <NavBar />
+  <h1>Immersive experiences that deliver</h1>
+</header>
+
+<style lang='scss'>
+  header {
+    position: relative;
+    padding: 4rem 2.4rem 0 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 65rem;
+  }
+  .background {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+
+    flex-shrink: 0;
+    picture:first-of-type img {
+      width: 100vw;
+      height: 65rem;
+      flex-shrink: 0;
+    }
+  }
+</style>

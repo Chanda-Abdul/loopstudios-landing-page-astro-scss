@@ -1,0 +1,24 @@
+---
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Layout from '../layout/Layout.astro';
+---
+
+<Layout>
+  <section class='careers'>
+    <ResponsiveImage
+    mobileImgUrl='/assets/images/mobile/image-interactive.jpg'
+    desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
+    alt='interactive image'
+  />
+    <h2>Join the VR Revolution at Loopstudios</h2>
+    <p>
+      We're always seeking talented individuals who are as passionate about VR
+      as we are. Whether you're a visionary designer, a skilled developer, or a
+      creative storyteller, Loopstudios offers a dynamic environment where you
+      can push the boundaries of what's possible.
+    </p>
+    <a href='#openings'>View Open Positions</a>
+
+    <h3 id='openings'>Positions</h3>
+  </section>
+</Layout>

@@ -1,0 +1,159 @@
+---
+import Image from 'astro/components/Image.astro';
+import { navLinks, socialLinks } from '../consts';
+
+const today = new Date();
+---
+
+<footer class='footer'>
+  <a href='/' class='footer__logo'>
+    <img src='/assets/logo.svg' />
+  </a>
+
+  <menu class='footer__menu'>
+    {
+      navLinks.map((link) => (
+        <li class='footer__link'>
+          <a href={link.linkTo}>{link.link}</a>
+        </li>
+      ))
+    }
+  </menu>
+
+  <ul class='footer__socials'>
+    {
+      socialLinks.map((link) => (
+        <li class='footer__socials--link'>
+          <a href={link.linkTo}>
+            <Image
+              src={link.icon}
+              width={16}
+              height={16}
+              format='svg'
+              alt={link.link}
+              loading='lazy'
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <span class='footer__attribution'>
+    <div class='attribution'>
+      © {today.getFullYear()} Loopstudios. All rights reserved.<br />
+      Challenge by <a
+        href='https://www.frontendmentor.io?ref=challenge'
+        target='_blank'>Frontend Mentor</a
+      >. <br />Coded by <a href='ChandaAbdul.dev' target='_blank'
+        >Chanda Abdul</a
+      >.
+    </div>
+  </span>
+</footer>
+
+<style lang='scss'>
+  .footer {
+    padding: var(--spacing-l);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--ravens-coat);
+    color: var(--pearl);
+    text-align: center;
+
+    gap: var(--spacing-m);
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    &__logo {
+    }
+
+    &__socials {
+      display: flex;
+      gap: 1.6rem;
+      margin: 1.6rem auto;
+      &--link {
+        img {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+    }
+
+    &__attribution,
+    &__attribution a {
+      font-family: var(--font-family-default);
+      text-transform: capitalize;
+      color: var(--metal-armor);
+      font-size: 1.2rem;
+      font-weight: var(--font-weight-default);
+      line-height: 1.8rem;
+    }
+  }
+
+  .footer__menu--link {
+    // margin-bottom: 1.9rem;
+    a {
+      // color: var(--baby-powder);
+      // text-align: center;
+      // font-size: var(--default-font-size-link);
+      // font-weight: var(--font-weight-display);
+      // line-height: var(--line-height-default);
+      // letter-spacing: var(--letter-spacing-md);
+    }
+  }
+  .footer__social-links {
+    // display: flex;
+    // justify-content: center;
+    // gap: 1em;
+    // margin-bottom: 4.8rem;
+  }
+
+  /* tablet media query */
+  @media screen and (min-width: 37.5em) {
+    .footer {
+      // display: grid;
+      // grid-template-columns: repeat(2, auto);
+      // grid-template-rows: repeat(3, auto);
+      // grid-column-gap: 0px;
+      // grid-row-gap: 0px;
+      // padding: 6.4rem 4rem;
+      button {
+        // justify-self: flex-end;
+        // align-self: flex-start;
+        // grid-column: 2;
+        // grid-row: 1;
+        // margin-top: 0;
+      }
+    }
+
+    .footer__logo {
+      // grid-column: 1;
+      // grid-row: 1;
+    }
+    .footer__links {
+      // grid-column: 1;
+      // grid-row: 2;
+      // display: flex;
+      // gap: 2.6rem;
+      // margin-bottom: var(--spacing-lg);
+    }
+    .footer__attribution {
+      // grid-column: 2;
+      // grid-row: 3;
+      // margin-top: 0;
+    }
+    .footer__social-links {
+      // grid-column: 1;
+      // grid-row: 3;
+      // margin-bottom: 0;
+      // justify-content: flex-start;
+    }
+  }
+</style>

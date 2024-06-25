@@ -1,0 +1,105 @@
+---
+import Layout from '../layout/Layout.astro';
+import { products } from '../consts';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+---
+
+<Layout>
+  <section class='products'>
+    <ResponsiveImage
+      mobileImgUrl='/assets/images/mobile/image-interactive.jpg'
+      desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
+      alt='interactive image'
+    />
+    <h2>Our Immersive VR Solutions</h2>
+
+    <p>
+      At Loopstudios, we understand that every brand has a unique story to tell.
+      Our diverse range of VR solutions is designed to empower you to captivate
+      your audience, enhance your brand, and drive meaningful engagement.
+    </p>
+    <div class='products__list'>
+      <h2>Featured Products</h2>
+      <ul>
+        {
+          products.map((product) => (
+            <li class='products__list--item'>
+              <h3>{product.product}</h3>
+              <p>{product.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+<div class="products__why">
+    <h3>Why Choose Loopstudios?</h3>
+
+    <ul>
+      <li>
+        <h4>Tailored Solutions</h4><p>
+          We collaborate closely with you to understand your specific needs and
+          goals, crafting VR solutions that align perfectly with your brand
+          identity and objectives.
+        </p>
+      </li>
+
+      <li>
+        <h4>Cutting-Edge Technology</h4><p>
+          Our team of experts stays at the forefront of VR technology, ensuring
+          that your experiences are innovative, engaging, and ahead of the
+          curve.
+        </p>
+      </li>
+
+      <li>
+        <h4>Proven Results</h4><p>
+          We've helped countless businesses achieve remarkable results with our
+          VR solutions. From increased brand awareness to improved training
+          outcomes, our track record speaks for itself.
+        </p>
+      </li>
+    </ul>
+  </div>
+    <div class='products__cta'>
+      <h3>Ready to explore the possibilities of VR for your brand?</h3>
+      <p>
+        Contact us today for a personalized consultation and demo of our
+        immersive solutions. Let Loopstudios elevate your brand to new heights.
+      </p>
+       </div>
+<a href='#demo' class='btn-link'>Request a Demo </a>
+   
+  </section>
+</Layout>
+
+<style lang='scss'>
+  .products {
+    &__list {
+      margin: var(--spacing-xl) 0;
+      &--item {
+        margin: var(--spacing-m) 0;
+        padding: var(--spacing-l) var(--spacing-m);
+
+        &:nth-child(even) {
+          border: 1px solid var(--ravens-coat);
+          h3,
+          h4,
+          p {
+            color: var(--ravens-coat);
+            opacity: 1;
+          }
+        }
+        &:nth-child(odd) {
+          border: 1px solid var(--pearl);
+          background-color: var(--ravens-coat);
+          h3,
+          h4,
+          p {
+            color: var(--pearl);
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
+</style>

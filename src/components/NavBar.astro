@@ -1,0 +1,167 @@
+---
+import { navLinks } from '../consts';
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  OpenIcon,
+  CloseIcon,
+} from 'astro-navbar';
+---
+
+<div class='navbar'>
+  <Astronav closeOnClick>
+    <a href='/' aria-label='go home' class='nav__logo'>
+      <img src='/assets/logo.svg' />
+    </a>
+    <MenuIcon>
+      <OpenIcon>
+        <img src='/assets/icons/icon-hamburger.svg' alt='menu' />
+      </OpenIcon>
+      <CloseIcon>
+        <img src='/assets/icons/icon-close.svg' alt='close' />
+      </CloseIcon>
+    </MenuIcon>
+
+    <MenuItems class='hidden nav__menu'>
+      <ul>
+        {
+          navLinks.map((link) => (
+            <li class='nav__menu--link'>
+              <a href={link.linkTo}>{link.link}</a>
+            </li>
+          ))
+        }
+      </ul>
+
+    </MenuItems>
+  </Astronav>
+</div>
+
+<style lang='scss'>
+  .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 6;
+  }
+  nav a {
+    // margin-bottom: 2rem;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 34.55em) {
+    .hidden {
+      display: none;
+    }
+
+    // header {
+    //   z-index: 7;
+    //   position: relative;
+    //   width: 100%;
+    //   button#astronav-menu {
+    //     display: flex;
+    //     width: var(--spacing-sm);
+    //     height: var(--spacing-sm);
+    //     flex-shrink: 0;
+    //   }
+    // }
+
+
+    a {
+      flex-direction: column;
+    }
+
+    .nav__menu {
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background: var(--ravens-coat);
+      color:var(--pearl);
+   padding-top: 6.4rem;
+
+      &:not(.hidden) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul {
+        // margin-bottom: var(--spacing-sm-vertical);
+
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.4rem;
+        z-index: 6;
+           margin: 15.9rem 0 auto 0;
+        li {
+          text-align: left;
+          display: flex;
+          justify-content: flex-start;
+          align-content: center;
+          align-items: center;
+          margin-bottom: 2.4rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 34.5em) {
+    header {
+      display: flex;
+      padding: var(--spacing-sm) 4rem;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav__menu {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3.7rem;
+        margin: 0 3.7rem;
+        li a {
+          margin-bottom: 0;
+          font-size: var(--default-font-size-link);
+          font-weight: var(--font-weight-display);
+          line-height: var(--line-height-default);
+          letter-spacing: var(--letter-spacing-md);
+        }
+      }
+    }
+
+    button {
+      margin: auto 0 auto;
+      width: fit-content;
+      padding: 1.2rem var(--spacing-sm-horizontal);
+    }
+  }
+
+  nav a:active,
+  nav a:hover {
+    color: var(--blue-jay);
+    border-bottom-color: var(--blue-jay);
+  }
+
+  @media screen and (min-width: 52.25em) {
+    .nav__menu ul {
+      margin: 0 3.7rem 0 auto;
+    }
+  }
+</style>

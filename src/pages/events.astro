@@ -1,0 +1,122 @@
+---
+import Layout from '../layout/Layout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import { events } from '../consts';
+---
+
+<Layout>
+  <section class='events'>
+    <ResponsiveImage
+      mobileImgUrl='/assets/images/mobile/image-interactive.jpg'
+      desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
+      alt='interactive image'
+    />
+    <h2>Experience Loopstudios Live</h2>
+    <p>
+      Connect with us and immerse yourself in the world of virtual reality. At
+      Loopstudios, we're passionate about sharing our knowledge and expertise,
+      and we actively participate in industry events, workshops, and conferences
+      around the globe.
+    </p>
+
+    <p>
+      Check out our upcoming events and discover how Loopstudios is shaping the
+      future of immersive experiences.
+    </p>
+
+    <div class='events__upcoming' id='#upcoming'>
+      <div class='events__upcoming--title'>
+        <h3 id='upcoming'>Upcoming Events</h3><button class='btn-secondary'
+          >View All</button
+        >
+      </div>
+      <ul class='events__upcoming--list'>
+        {
+          events.upcoming.map((evt) => (
+            <li class='events__upcoming--item'>
+              <h4>{evt.event}</h4>
+              <h5>
+                {evt.date.month}
+                {evt.date.day}-{evt.date.month + evt.date.length},{' '}
+                {evt.date.year}
+              </h5>
+              <h4>{evt.location}</h4>
+              <p>{evt.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class='events__prior' id='#prior'>
+      <div class='events__prior--title'>
+        <h3 id='prior'>Prior Events</h3><button class='btn-secondary'
+          >View All</button
+        >
+      </div>
+      <ul class='events__prior--list'>
+        {
+          events.past.map((evt) => (
+            <li class='events__prior--item'>
+              <h4>{evt.event} </h4>
+              <p>
+                {evt.date.month}
+                {evt.date.day}-{evt.date.month + evt.date.length},{' '}
+                {evt.date.year}
+              </p>
+              <h4>{evt.location}</h4>
+              <p>{evt.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <div class='events__cta'>
+        <h2>Get Involved</h2>
+        <p>
+          Interested in having Loopstudios present at your event or conference?
+          We offer engaging presentations, workshops, and interactive VR
+          experiences. Contact us to discuss how we can bring the power of VR to
+          your audience.
+        </p>
+
+        <p>
+          Stay tuned for updates on our upcoming events. Join us as we explore
+          the latest trends and innovations in virtual reality and discover how
+          Loopstudios is shaping the future of immersive experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style lang='scss'>
+    .events {
+      &__upcoming,
+      &__prior {
+        &--title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: var(--spacing-l) 0;
+          h3,
+          h4 {
+            margin: 0;
+          }
+        }
+        &--list {
+        }
+        &--item {
+          border: 1px solid var(--ravens-coat);
+         margin: var(--spacing-s) 0;
+          padding: var(--spacing-m) var(--spacing-s);
+        }
+      }
+
+      &__cta {
+        margin-top: var(--spacing-xxl);
+        p {
+          padding: var(--spacing-xs) var(--spacing-s);
+        }
+      }
+    }
+  </style>
+</Layout>

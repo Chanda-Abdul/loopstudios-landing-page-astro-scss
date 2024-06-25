@@ -1,0 +1,26 @@
+---
+import Layout from '../layout/Layout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+
+---
+
+<Layout>
+  <section class='about'>
+    <ResponsiveImage
+      mobileImgUrl='/assets/images/mobile/image-interactive.jpg'
+      desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
+      alt='interactive image'
+    />
+    <h2>Crafting Digital Worlds, Building Brand Legacies</h2>
+    <p>
+      At Loopstudios, we're passionate storytellers and technological pioneers.
+      Our team blends artistry and innovation to create bespoke VR experiences
+      that resonate with your audience and leave a lasting impact. We've
+      partnered with industry leaders across the globe, delivering world-class
+      results that drive engagement and elevate brands.
+    </p>
+    <a href='#explore'>Explore Our Portfolio</a>
+
+    <h3 id='explore'>Portfolio</h3>
+  </section>
+</Layout>
