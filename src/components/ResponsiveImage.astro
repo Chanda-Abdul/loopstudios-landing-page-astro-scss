@@ -9,14 +9,15 @@ type Images = {
 }
 
 interface Props {
-  className?:string;
+  cls?:string;
   mobileImgUrl:string|ImageMetadata;
   desktopImgUrl?:string|ImageMetadata;
   alt: string;
 }
-const { mobileImgUrl, desktopImgUrl, alt } = Astro.props;
+const { mobileImgUrl, desktopImgUrl, alt, cls } = Astro.props;
 
 const mobileImg = await getImage({
+  cls: cls,
   src: mobileImgUrl,
   format: 'webp',
   width: '375px',
@@ -24,6 +25,7 @@ const mobileImg = await getImage({
 });
 
 const desktopImg = await getImage({
+  cls: cls,
   src: desktopImgUrl,
   format: 'webp',
   width: 'auto',
@@ -31,13 +33,12 @@ const desktopImg = await getImage({
 });
 ---
 
-<picture>
+<picture class={cls}>
   <source media='(max-width: 768px)' srcset={mobileImg.src} />
  <source media='(min-width: 768px)' srcset={desktopImg.src} />
   <img src={desktopImg.src} alt={alt} />
 </picture>
 
 <style>
-
 
 </style>

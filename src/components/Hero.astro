@@ -8,28 +8,76 @@ import ResponsiveImage from './ResponsiveImage.astro';
     desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
     alt='interactive image '
   />
-  <div class="hero__content">
-  <h2>The leader in interactive VR</h2>
-  <p>
-    Founded in 2011, Loopstudios has been producing world-class virtual reality
-    projects for some of the best companies around the globe. Our award-winning
-    creations have transformed businesses through digital experiences that bind
-    to their brand.
-  </p></div>
+  <div class='hero__content'>
+    <h2>The leader in interactive VR</h2>
+    <p>
+      Founded in 2011, Loopstudios has been producing world-class virtual
+      reality projects for some of the best companies around the globe. Our
+      award-winning creations have transformed businesses through digital
+      experiences that bind to their brand.
+    </p>
+  </div>
 </section>
 
-<style lang='scss'>
+<style>
   .hero {
-   margin-top: var(--spacing-l);
+    margin: var(--spacing-l) var(--spacing-s);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 
-   &__content{
-padding: 0 var(--spacing-s);
-   }
-    img:first-of-type {
-      width: 32.7rem;
-      height: 22.4rem;
+    picture:first-of-type,
+    picture img:first-of-type {
+      width: clamp(32.7rem, 75vw, 88.9rem);
+      height: clamp(22.4rem, 50vw, 50rem);
       flex-shrink: 0;
+      margin-bottom: var(--spacing-l);
+    }
+  }
+  .hero__content {
+    width: clamp(32.7rem, 75vw, 44.5rem);
+    padding: 0 var(--spacing-s);
+  }
+
+  @media screen and (min-width: 48em) {
+    .hero {
+      margin: var(--spacing-tablet);
+      padding: 0;
     }
   }
 
+  @media screen and (min-width: 75em) {
+    .hero {
+      margin: var(--spacing-desktop);
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      picture:first-of-type,
+      picture img:first-of-type {
+        position: relative;
+        left: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .hero__content {
+      position: absolute;
+      background-color: var(--pearl);
+      padding: var(--spacing-xxl) 0 0 var(--spacing-xxl);
+      bottom: -0.1rem;
+      right: 0;
+      width: 54.1rem;
+      height: 31.7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-content: flex-start;
+      align-items: flex-start;
+      * {
+        text-align: left;
+      }
+    }
+  }
 </style>

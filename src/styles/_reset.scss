@@ -17,15 +17,15 @@ html {
 img,
 svg,
 picture {
-    height: auto;
+    // height: auto;
 }
 
 picture img,
 picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover
+//     display: block;
+    max-width: 100%;
+
+    object-fit: cover;
 }
 
 ul,

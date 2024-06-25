@@ -31,10 +31,12 @@ import { events } from '../consts';
         >
       </div>
       <ul class='events__upcoming--list'>
+        {/* to-do => add styles, accordion maybe? */}
         {
           events.upcoming.map((evt) => (
             <li class='events__upcoming--item'>
               <h4>{evt.event}</h4>
+              {/* to-do => format date */}
               <h5>
                 {evt.date.month}
                 {evt.date.day}-{evt.date.month + evt.date.length},{' '}
@@ -86,6 +88,11 @@ import { events } from '../consts';
         </p>
       </div>
     </div>
+    <ResponsiveImage
+      mobileImgUrl='/assets/images/mobile/image-interactive.jpg'
+      desktopImgUrl='/assets/images/desktop/image-interactive.jpg'
+      alt='interactive image'
+    />
   </section>
 
   <style lang='scss'>
@@ -106,7 +113,7 @@ import { events } from '../consts';
         }
         &--item {
           border: 1px solid var(--ravens-coat);
-         margin: var(--spacing-s) 0;
+          margin: var(--spacing-s) 0;
           padding: var(--spacing-m) var(--spacing-s);
         }
       }

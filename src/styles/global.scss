@@ -4,11 +4,6 @@
 
 
 
-
-
-// - Mobile: 375px
-// - Desktop: 1440px
-
 body {
     font-size: var(--font-size-default);
 
@@ -56,34 +51,39 @@ a {
 h1 {
     border: 2px solid var(--pearl);
     color: var(--pearl);
-    font-family: var(--font-family-display);
     font-size: var(--font-size-h1);
-    font-weight: var(--font-weight-display);
     line-height: var(--line-height-md);
     text-transform: var(--text-case-display);
     margin: auto;
     padding: var(--spacing-s);
+
+    @media screen and (min-width: 75em) {
+        font-size: var(--font-size-h1-desktop);
+        line-height: var(--line-height-xl);
+    }
 }
-
-
 
 h2 {
     text-align: center;
     color: var(--ravens-coat);
-    font-family: var(--font-family-display);
     font-size: var(--font-size-h2);
-    font-weight: var(--font-weight-display);
     line-height: var(--font-size-h2);
     text-transform: var(--text-case-display);
 
     margin-bottom: 1.6rem;
 
+    @media screen and (min-width: 75em) {
+        font-size: var(--font-size-h2-desktop);
+        line-height: var(--font-size-h2-desktop);
+        margin-bottom: 2.5rem;
+    }
+
 }
 
 h3 {
     text-align: center;
-    color: var(--pewter);
-    font-family: var(--font-family-default);
+    // color: var(--pewter);
+    font-family: var(--font-family-display);
     font-size: var(--font-size-h3);
     font-weight: var(--font-weight-display);
     line-height: var(--font-size-h3);
@@ -117,13 +117,19 @@ button.btn-link {
     line-height: var(--font-size-button);
     letter-spacing: 5px;
     text-transform: var(--text-case-display);
+    transition: all .4s ease;
 
+    &:hover {
+        border: 1px solid var(--pearl);
+        color: var(--pearl);
+        background-color: var(--ravens-coat);
+    }
 }
 
 .btn-secondary {
     font-weight: var(--font-weight-default);
     display: inline-block;
-    // margin: var(--spacing-m) auto;
+
     padding: var(--spacing-xs) var(--spacing-s);
     text-transform: var(--text-case-display);
     border: 1px solid var(--ravens-coat);
@@ -144,4 +150,12 @@ picture img {
 .footer__link a {
 
     @include link-footer();
+}
+
+@media screen and (min-width: 50em) {
+
+    // hide mobile nav menu button
+    #astronav-menu {
+        display: none;
+    }
 }

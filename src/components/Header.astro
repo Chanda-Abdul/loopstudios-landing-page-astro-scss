@@ -15,7 +15,7 @@ import ResponsiveImage from './ResponsiveImage.astro';
   <h1>Immersive experiences that deliver</h1>
 </header>
 
-<style lang='scss'>
+<style>
   header {
     position: relative;
     padding: 4rem 2.4rem 0 2.4rem;
@@ -25,19 +25,50 @@ import ResponsiveImage from './ResponsiveImage.astro';
     align-items: center;
     height: 65rem;
   }
+  h1 {
+    width: 32.7rem;
+    height: auto;
+  }
   .background {
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100vw;
-
     flex-shrink: 0;
-    picture:first-of-type img {
-      width: 100vw;
+    max-height: 65rem;
+
+    picture,
+    source,
+    picture img {
+      width: 100%;
       height: 65rem;
-      flex-shrink: 0;
+    }
+  }
+
+  @media screen and (min-width: 48em) {
+    #astronav-menu {
+      display: none;
+    }
+    header {
+      align-items: flex-start;
+      padding: 6.4rem;
+    }
+
+    h1 {
+      margin: auto 0;
+    }
+  }
+
+  @media screen and (min-width: 75em) {
+    header {
+      align-items: flex-start;
+      padding: 6.4rem 16.5rem;
+    }
+
+    h1 {
+      width: 65rem;
+      padding: 4rem;
     }
   }
 </style>

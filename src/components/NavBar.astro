@@ -23,7 +23,7 @@ import {
       </CloseIcon>
     </MenuIcon>
 
-    <MenuItems class='hidden nav__menu'>
+    <MenuItems class='hidden nav__menu' aria-label='nav menu'>
       <ul>
         {
           navLinks.map((link) => (
@@ -33,7 +33,6 @@ import {
           ))
         }
       </ul>
-
     </MenuItems>
   </Astronav>
 </div>
@@ -46,31 +45,20 @@ import {
     align-content: center;
     z-index: 6;
   }
-  nav a {
-    // margin-bottom: 2rem;
-  }
   a {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  @media screen and (max-width: 34.55em) {
+
+  .nav__logo img {
+    width: 14.4rem;
+    height: 2.4rem;
+  }
+  @media screen and (max-width: 50em) {
     .hidden {
       display: none;
     }
-
-    // header {
-    //   z-index: 7;
-    //   position: relative;
-    //   width: 100%;
-    //   button#astronav-menu {
-    //     display: flex;
-    //     width: var(--spacing-sm);
-    //     height: var(--spacing-sm);
-    //     flex-shrink: 0;
-    //   }
-    // }
-
 
     a {
       flex-direction: column;
@@ -84,8 +72,8 @@ import {
       width: 100vw;
       height: 100%;
       background: var(--ravens-coat);
-      color:var(--pearl);
-   padding-top: 6.4rem;
+      color: var(--pearl);
+      padding-top: 6.4rem;
 
       &:not(.hidden) {
         display: flex;
@@ -93,15 +81,14 @@ import {
       }
 
       ul {
-        // margin-bottom: var(--spacing-sm-vertical);
-
+      
         position: relative;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         padding: 0 2.4rem;
         z-index: 6;
-           margin: 15.9rem 0 auto 0;
+        margin: 15.9rem 0 auto 0;
         li {
           text-align: left;
           display: flex;
@@ -114,10 +101,10 @@ import {
     }
   }
 
-  @media screen and (min-width: 34.5em) {
+  @media screen and (min-width: 50em) {
     header {
       display: flex;
-      padding: var(--spacing-sm) 4rem;
+      padding: var(--spacing-sm) 16.5rem;
       justify-content: center;
       align-items: center;
       width: 100%;
@@ -128,40 +115,43 @@ import {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
+      justify-content: flex-end;
       width: 100%;
+      background-color: transparent;
       ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 3.7rem;
-        margin: 0 3.7rem;
+        gap: var(--spacing-m);
+        margin: 0;
         li a {
           margin-bottom: 0;
+          font-family: var(--font-family-default);
           font-size: var(--default-font-size-link);
-          font-weight: var(--font-weight-display);
+          font-weight: var(--font-weight-default);
           line-height: var(--line-height-default);
           letter-spacing: var(--letter-spacing-md);
+          text-transform: capitalize;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--pearl);
+          }
+          &:hover::after {
+            width: 2.5rem;
+          }
         }
       }
     }
 
-    button {
-      margin: auto 0 auto;
-      width: fit-content;
-      padding: 1.2rem var(--spacing-sm-horizontal);
-    }
   }
 
-  nav a:active,
-  nav a:hover {
-    color: var(--blue-jay);
-    border-bottom-color: var(--blue-jay);
-  }
 
-  @media screen and (min-width: 52.25em) {
-    .nav__menu ul {
-      margin: 0 3.7rem 0 auto;
-    }
-  }
+
 </style>
