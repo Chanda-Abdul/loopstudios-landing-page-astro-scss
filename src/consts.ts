@@ -17,55 +17,70 @@ export const creations = [
     {
         creation: 'Deep earth',
         linkTo: '/',
+        alt: 'image of earth',
         image: {
             mobile: '/assets/images/mobile/image-deep-earth.jpg',
             desktop: '/assets/images/desktop/image-deep-earth.jpg'
         }
     },
     {
-        creation: 'Night arcade', linkTo: '/',
+        creation: 'Night arcade',
+        linkTo: '/',
+        alt: 'arcade',
         image: {
             mobile: '/assets/images/mobile/image-night-arcade.jpg',
             desktop: '/assets/images/desktop/image-night-arcade.jpg'
         }
     },
     {
-        creation: 'Soccer team VR', linkTo: '/',
+        creation: 'Soccer team VR',
+        linkTo: '/',
+        alt: 'soccer player',
         image: {
             mobile: '/assets/images/mobile/image-soccer-team.jpg',
             desktop: '/assets/images/desktop/image-soccer-team.jpg'
         }
     },
     {
-        creation: 'The grid', linkTo: '/',
+        creation: 'The grid',
+        linkTo: '/',
+        alt: 'racecar',
         image: {
             mobile: '/assets/images/mobile/image-grid.jpg',
             desktop: '/assets/images/desktop/image-grid.jpg'
         }
     },
     {
-        creation: 'From up above VR', linkTo: '/',
+        creation: 'From up above VR',
+        linkTo: '/',
+        alt: 'hairpin turn',
         image: {
             mobile: '/assets/images/mobile/image-from-above.jpg',
             desktop: '/assets/images/desktop/image-from-above.jpg'
         }
     },
     {
-        creation: 'Pocket borealis', linkTo: '/',
+        creation: 'Pocket borealis',
+        linkTo: '/',
+        alt: 'aurora borealis',
         image: {
             mobile: '/assets/images/mobile/image-pocket-borealis.jpg',
             desktop: '/assets/images/desktop/image-pocket-borealis.jpg'
         }
     },
     {
-        creation: 'The curiosity', linkTo: '/',
+        creation: 'The curiosity',
+        linkTo: '/',
+        alt: 'mars rover',
         image: {
             mobile: '/assets/images/mobile/image-curiosity.jpg',
             desktop: '/assets/images/desktop/image-curiosity.jpg'
         }
     },
     {
-        creation: 'Make it fisheye', linkTo: '/',
+        creation: 'Make it fisheye',
+        linkTo: '/',
+        alt: 'fisheye lens image',
         image: {
             mobile: '/assets/images/mobile/image-fisheye.jpg',
             desktop: '/assets/images/desktop/image-fisheye.jpg'

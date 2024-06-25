@@ -84,6 +84,12 @@ h3 {
     line-height: var(--font-size-h3);
     text-transform: var(--text-case-display);
     margin-bottom: var(--spacing-xs);
+    
+    @media screen and (min-width: 75em) {
+        font-size: var(--font-size-h3-desktop);
+        line-height: var(--font-size-h3-desktop);
+ 
+    }
 
 }
 
